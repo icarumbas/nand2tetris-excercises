@@ -2,6 +2,18 @@
 // and the book "The Elements of Computing Systems"
 // by Nisan and Schocken, MIT Press.
 /**
+Nand
+0 0 1
+0 1 1
+1 0 1
+1 1 0
+
+And
+0 0 0
+1 0 0
+0 1 0
+1 1 1
+
  * Or gate:
  * if (a or b) out = 1, else out = 0 
  */
@@ -10,5 +22,8 @@ CHIP Or {
     OUT out;
 
     PARTS:
-    //// Replace this comment with your code.
+    Not(in=a, out=notA);
+    Not(in=b, out=notB);
+    Nand(a=notA, b=notB, out=out);
+    
 }

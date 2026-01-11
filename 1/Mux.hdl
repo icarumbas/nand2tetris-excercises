@@ -2,13 +2,37 @@
 // and the book "The Elements of Computing Systems"
 // by Nisan and Schocken, MIT Press.
 /** 
+Nand
+0 0 1
+0 1 1
+1 0 1
+1 1 0
+
+And
+0 0 0
+1 0 0
+0 1 0
+1 1 1
+
+Or 
+0 0 0
+0 1 1
+1 0 1
+1 1 1
+
+Xor
+0 0 0
+1 0 1
+0 1 1
+1 1 0
  * Multiplexor:
  * if (sel = 0) out = a, else out = b
  */
 CHIP Mux {
     IN a, b, sel;
     OUT out;
+    
 
     PARTS:
-    //// Replace this comment with your code.
+    
 }
