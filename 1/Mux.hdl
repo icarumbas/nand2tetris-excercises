@@ -25,14 +25,33 @@ Xor
 1 0 1
 0 1 1
 1 1 0
+
+Mux
+s a b out
+0 0 0 0
+0 0 1 0
+0 1 0 1
+0 1 1 1
+
+1 0 0 0
+1 0 1 1
+1 1 0 0
+1 1 1 1
+
+!s and a || s and b
+
+
  * Multiplexor:
  * if (sel = 0) out = a, else out = b
  */
 CHIP Mux {
     IN a, b, sel;
     OUT out;
-    
 
     PARTS:
+    Not(in=sel, out=notS);
+    And(a=notS, b=a, out=and1);
+    And(a=sel, b=b, out=and2);
+    Or(a=and1, b=and2, out=out);
     
 }
